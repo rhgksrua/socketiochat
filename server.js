@@ -15,7 +15,8 @@ app.get('/', function(req, res) {
 
 io.on('connection', function(socket) {
     console.log('user connected');
-    io.emit('user connection', '*** user connected ***');
+    var ip = socket.handshake.address;
+    socket.broadcast.emit('user connection', 'user: ' + ip);
     socket.on('chat message', function(msg) {
         io.emit('chat message', msg);
     });
