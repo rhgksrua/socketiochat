@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title Socket.IO chat
+        link(rel="stylesheet", href="/resources/css/main.css")
+        script(src="/socket.io/socket.io.js")
+        script(src="https://cdn.socket.io/socket.io-1.3.5.js")
+        script(src="http://code.jquery.com/jquery-1.11.1.js")
+        script(src="/resources/js/chat.js")
+        
+    body
+        div
+            h1 SOCKET IO CHAT
+            p Your IP: #{ip}
+        
+        ul#messages
+        form(action=)
+            input(id="m", autocomplete="off")
+            button Send
+
+
+  
