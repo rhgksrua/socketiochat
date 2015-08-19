@@ -1,3 +1,11 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+# Chat App from Socket.io
+You can find the tutorial [here](http://socket.io/get-started/chat/)
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+## Dependencies
+
+* Express >4
+* Socket.io >1
+
+## Other
+
+

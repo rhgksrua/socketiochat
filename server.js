@@ -15,11 +15,10 @@ app.get('/', function(req, res) {
 
 io.on('connection', function(socket) {
     console.log('user connected');
+    io.emit('*** user has connected ***');
     socket.on('chat message', function(msg) {
         io.emit('chat message', msg);
-
     });
-   
 });
 
 http.listen(port, ipaddress, function() {
