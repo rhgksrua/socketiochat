@@ -15,7 +15,7 @@ app.use('/resources', express.static(__dirname + '/resources'));
 
 
 app.get('/', function(req, res) {
-    var ip = req.connection.remoteAddress;
+    var ip = req.ip;
     res.render('index', {ip: ip});
 });
 
