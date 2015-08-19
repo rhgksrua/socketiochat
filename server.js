@@ -13,6 +13,7 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/templates');
 app.use('/resources', express.static(__dirname + '/resources'));
 
+app.enable('trust proxy');
 
 app.get('/', function(req, res) {
     var ip = req.ip;
