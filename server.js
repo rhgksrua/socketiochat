@@ -22,7 +22,7 @@ app.get('/', function(req, res) {
 
 io.on('connection', function(socket) {
     console.log('user connected');
-    var ip = socket.handshake.address;
+    var ip = socket.request.connection.remoteAddress;
     console.log(ip);
     socket.broadcast.emit('user connection', 'user: ' + ip);
     socket.on('chat message', function(msg) {
