@@ -11,5 +11,7 @@ $(document).ready(function() {
     socket.on('user connection', function(msg) {
         $('#messages').append($('<li class="new-user">').text(msg));
     });
-
+    socket.on('ip', function(ip) {
+        $('#messages').append($('<li>').text(ip));
+    });
 });
