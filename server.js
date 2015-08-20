@@ -23,13 +23,14 @@ app.enable('trust proxy');
 
 app.get('/', function(req, res) {
     var ip = req.ip;
-    io.emit('ip', ip);
+    //io.emit('ip', ip);
     res.render('index', {ip: ip});
 });
 
 io.on('connection', function(socket) {
     console.log('user connected');
-    var ip = socket.request.connection.remoteAddress;
+    var ip = socket.client.request.headers['x-forwarded-for'] || 
+             socket.request.connection.remoteAddress;
     socket.broadcast.emit('user connection', 'user: ' + ip);
     socket.on('chat message', function(msg) {
         io.emit('chat message', msg);
