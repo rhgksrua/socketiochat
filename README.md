@@ -6,6 +6,8 @@ You can find the tutorial [here](http://socket.io/get-started/chat/)
 * Express >4
 * Socket.io >1
 
-## Other
+## TODO
+
+* Add nickname support
 
 
